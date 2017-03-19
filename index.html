@@ -7,11 +7,50 @@
 				margin: 0;
 			}
 		</style>
+
 	</head>
 	<body>
-		<a href="https://s-media-cache-ak0.pinimg.com/736x/6d/50/7c/6d507ce1b512a72302f7e809fd39ced6.jpg" target="_blank">
+		<a id="ad_link" href="https://s-media-cache-ak0.pinimg.com/736x/6d/50/7c/6d507ce1b512a72302f7e809fd39ced6.jpg" target="_blank">
 			<img src="https://s1.postimg.org/vdhhs4yrj/test_ad_2_300x140.gif">
 		</a>
-		<!--<img src="https://s28.postimg.org/e2lp5yn1p/test_ad.png">-->
+		<!--
+		recomended resolution: (300px) x (140px)
+		last image url: https://s11.postimg.org/4vf54g1vn/test_ad_300x140.gif
+		<img src="https://s28.postimg.org/e2lp5yn1p/test_ad.png">
+		-->
+
+		<script src="https://code.jquery.com/jquery-3.2.0.min.js" integrity="sha256-JAW99MJVpJBGcbzEuXk4Az05s/XyDdBomFqNlM3ic+I=" crossorigin="anonymous"></script>
+
+		<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+			ga('create', 'UA-70407066-5', 'auto');
+			ga('send', 'pageview');
+			// Un page view implica que se abrio la app
+			ga('send', 'event', {
+				eventCategory: 'ad_load',
+				eventAction: 'ad_loaded'
+			});
+		</script>
+
+		<script type="text/javascript">
+
+
+			function handleOutboundLinkClicks(event) {
+				ga('send', 'event', {
+					eventCategory: 'image_ad',
+					eventAction: 'click',
+					eventLabel: event.target.href
+				});
+			}
+
+			$("#ad_link").click(function (e) {
+				handleOutboundLinkClicks(e)
+			})
+		</script>
+
 	</body>
 </html>
